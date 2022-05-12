@@ -21,6 +21,6 @@ class CourseSeeder extends Seeder
         $course->category = "Desarrollo web";
 
         $course->save(); */
-        Course::factory(50)->create();
+        //Course::factory(50)->create();
     }
 }
