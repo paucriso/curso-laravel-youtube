@@ -3,21 +3,24 @@
 namespace Database\Seeders;
 
 use App\Models\Course;
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CourseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        User::factory(10)->create();
-        //$this->call(CourseSeeder::class);
+        /* $course = new Course();
+        $course->name = "Laravel";
+        $course->description = "El mejor framework de PHP";
+        $course->category = "Desarrollo web";
+
+        $course->save(); */
         Course::factory(50)->create();
     }
 }
