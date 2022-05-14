@@ -22,7 +22,10 @@ Route::get('/', HomeController::class);
 Route::controller(CursoController::class)->group(function(){
     Route::get('cursos', 'index')->name('cursos.index');
     Route::get('cursos/create', 'create')->name('cursos.create');
+    Route::post('cursos', 'store')->name('cursos.store');
     Route::get('cursos/{id}', 'show')->name('cursos.show');
+    Route::get('cursos/{id}/edit', 'edit')->name('cursos.edit');
+    Route::put('cursos/{course}', 'update')->name('cursos.update');
 });
 
 /* Route::get('cursos', [CursoController::class, 'index']);
