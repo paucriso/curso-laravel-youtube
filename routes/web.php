@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+Use App\Http\Controllers\ContactoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,8 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
+Route::view('nosotros', 'nosotros')->name('nosotros');
 
 // grupo de rutas
 
@@ -26,6 +29,10 @@ Route::controller(CursoController::class)->group(function(){
     Route::get('cursos/{id}', 'show')->name('cursos.show');
     Route::get('cursos/{id}/edit', 'edit')->name('cursos.edit');
     Route::put('cursos/{course}', 'update')->name('cursos.update');
+    Route::delete('cursos/{id}', 'destroy')->name('cursos.destroy');
+
+    Route::get('contacto', [ContactoController::class, 'index'])->name('contacto.index');
+    Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');
 });
 
 /* Route::get('cursos', [CursoController::class, 'index']);

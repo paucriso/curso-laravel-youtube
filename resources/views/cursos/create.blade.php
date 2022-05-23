@@ -7,15 +7,30 @@
     @csrf
     <div>
       <label>Nombre</label><br>
-      <input type="text" name="name">
+      <input type="text" name="name" value="{{old('name')}}">
+      @error('name')
+       <br>
+       <small>{{$message}}</small>
+       <br>   
+      @enderror
     </div>
     <div>
       <label>Descripción</label><br>
-      <textarea name="description" cols="30" rows="10"></textarea>
+      <textarea name="description" cols="30" rows="10">{{old('description')}}</textarea>
+      @error('description')
+          <br>
+          <small>{{$message}}</small>
+          <br>
+      @enderror
     </div>
     <div>
       <label>Categoría</label><br>
-      <input type="text" name="category">
+      <input type="text" name="category" value="{{old('category')}}">
+      @error('category')
+       <br>
+       <small>{{$message}}</small>
+       <br>   
+      @enderror
     </div>
     <div>
       <br>

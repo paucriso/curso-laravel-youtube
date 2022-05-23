@@ -9,15 +9,30 @@
     @method('PUT')
     <div>
       <label>Nombre</label><br>
-      <input type="text" name="name" value="{{$course->name}}">
+      <input type="text" name="name" value="{{old('name', $course->name)}}">
+      @error('name')
+          <br>
+          <small>{{$message}}</small>
+          <br>
+      @enderror
     </div>
     <div>
       <label>Descripción</label><br>
-      <textarea name="description" cols="30" rows="10" >{{$course->description}}</textarea>
+      <textarea name="description" cols="30" rows="10" >{{old('description', $course->description)}}</textarea>
+      @error('description')
+          <br>
+          <small>{{$message}}</small>
+          <br>
+      @enderror
     </div>
     <div>
       <label>Categoría</label><br>
-      <input type="text" name="category" value="{{$course->category}}">
+      <input type="text" name="category" value="{{old('category', $course->category)}}">
+      @error('category')
+          <br>
+          <small>{{$message}}</small>
+          <br>
+      @enderror
     </div>
     <div>
       <br>

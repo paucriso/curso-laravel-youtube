@@ -7,4 +7,11 @@
   <p><strong>Categoría: </strong>{{$course->category}}</p>
   <p>{{$course->description}}</p>
   <a href="{{route('cursos.index')}}">volver a cursos</a>
+  <br>
+<form action="{{route('cursos.destroy', $course)}}" method="POST">
+  @csrf
+  @method('delete')
+  <button type="submit">borrar curso</button>
+</form>
 @endsection
+
